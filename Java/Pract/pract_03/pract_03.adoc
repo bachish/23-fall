@@ -1,0 +1,120 @@
+Малая сборка? Большая сборка?
+
+https://opensource.com/article/22/7/garbage-collection-java
+
+https://habr.com/ru/companies/otus/articles/553996/
+
+https://ziginsider.github.io/Garbage_Collector_Java/
+
+image::media/mem.png[]
+
+== Поколения 
+image::media/gen.png[]
+
+Мертвый объект -- не достижим ни из верхушек стека всех потоков, ни из объетов, на которые есть ссылка из объектов старого поколения 
+
+image::media/gen_dead.png[]
+
+E, C мертвы. С точки зрения маленькой сборки -- C  -- это живой объект, а сточки зрения большой (полной) -- C и E -- мертвые объекты.
+
+На самом деле, важно не кто мертв, а кто жив. Мертвые потом когда-нибудь соберут.
+
+image::media/gc_needs.png[]
+
+image::media/gc_monitor.png[]
+
+Профилирование 
+
+image::media/profiling.png[]
+
+Алгоритмы GC
+
+image::media/stand_gc.png[]
+
+=== Serial GC 
+Перемещает объекты физически. Прямо КОПИРУЕТ целиком.
+
+S0, S1 -- "пожило", т.е. пережило сколько-то сборок мусора. Старшее поколение -- предполагаем, что это важные для программы объекты. Выделяем под них большую часть кучи.
+
+image::media/s01.png[]
+
+При заполнении eden останавливаем мир и перемещаем объекты в survival
+
+image::media/ser_02.png[]
+
+image::media/ser_03.png[]
+
+image::media/ser_04.png[]
+
+Что  делать, если survival заполниться? Можно оставить в eden. Можно считать старшим поколением.
+
+
+image::media/ser_05.png[]
+
+Ссылки из старших объектов учитываются в малой сборке, но сами объекты -- нет.
+
+Эвристики 
+
+image::media/accelerator.png[]
+
+image::media/evr_mem.png[]
+
+=== Parallel GC 
+Однопоточно собираем мусор, многопоточно перемещаем. Области памяти можем заранее выделить под потоки, чтоб не работать с синхронизацией. Мир все равно стоит, просто перекладываем параллельно.
+
+image::media/par_01.png[]
+
+image::media/par_02.png[]
+
+=== CMS (concurent mark sweep)
+deprecated :(
+
+image::media/cms_01.png[]
+
+image::media/cms_02.png[]
+
+image::media/cms_03.png[]
+
+csm_10
+
+нет явной дефрагментации, поэтому нужен большой размер кучи
+
+=== Garbage First 
+Таргетим определенные сектора, а не большие регионы
+
+image::media/idea.png[]
+
+Малая сборка 
+
+image::media/gf_00.png[]
+
+Цикл пометки
+
+image::media/gf_gc_01.png[]
+
+Смешанная сборка
+
+image::media/gf_02.png[]
+
+image::media/gf_03.png[]
+
+После смешанной сборки опять работаем только с циклами пометки.
+
+Громадные регионы 
+
+громадные объект не трогаем во время малой сборки.
+
+image::media/gf_04.png[]
+
+image::media/gf_05.png[]
+
+=== Z GC 
+image::media/z_01.png[]
+
+image::media/z_02.png[]
+
+image::media/z_03.png[]
+
+finalize -- доступен только из сборщика, не является больше живым. На один и тот же адрес мб несколько указателей разных типов
+
+image::media/z_04.png[]
