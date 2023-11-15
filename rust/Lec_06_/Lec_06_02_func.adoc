@@ -1,0 +1,49 @@
+= Функциональные аспекты 
+
+== 1. Замыкания 
+map -- берет Ok от result и возвращает новый Result 
+
+struct Host {
+cores: i32,
+}
+let mb_host: Result<&Host, ...> = find_host(...);
+let mb_millicores: Result<i32, ...> = mb_host
+.map(|host| 1000 * host.cores);
+
+Захват переменных
+
+fn make_greetings (names: &[String], greeting : &str) -> Vec<String> {
+names.iter()
+.map(|name| format!("{}, {}!", greeting, name))
+.collect()
+}
+
+Методы ленивые: не исполняются, пока не будет вызван collect. Замыкание имеет состояние, в котором хранится захваченный greeting. 
+
+Рассахаривание (псевдокод):
+
+
+struct Closure<'a> {
+greeting : &'a &'a str,
+}
+impl<'a> Closure<'a> {
+pub fn call(&self, name: &String) -> String {
+format!("{}, {}!", self.greeting, name)
+}
+}
+
+=== Захват владение move  
+безопасно захватывает объект со стека 
+
+=== Функциональные трейты
+имеют функцию call, первый аргумент которой:
+
+* Fn - принимает &self
+* FnMut - принимает &mut self
+* FnOnce - принимает self  
+** `move || my_obj.fun()`, fun -- принимает во владение объект. после этого он уничтожается. 
+
+=== function pointers 
+fn -- указатель на функцию. не имеет стейта, ничего не может захватить. поэтому его можно скастовать к замыканию, обратно -- только если у замыкания тоже нет никакого состояния.
+
+== 2. Замыкания на практике
