@@ -44,8 +44,10 @@ jobs:
             - run: "cp -r 'vm/06_stack/media' _site/vm_106"
             
             #vm/07_native_interface
-            - run: "asciidoctor 'vm/07_native_interface/index.adoc' -D _site/vm_107"
+            - run: "asciidoctor 'vm/07_native_interface/index.adoc' -D _site/vm/107"
             - run: "cp -r 'vm/07_native_interface/media' _site/vm_107"
+
+            - run: "asciidoctor 'vm/07_native_interface/lib.adoc' -D _site/vm/107/lib"
             
           
             - name: Upload GitHub Pages artifact
