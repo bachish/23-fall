@@ -1,0 +1,40 @@
+name: GitHub Pages Publish
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+    upload:
+        runs-on: ubuntu-22.04
+        steps:
+            - uses: actions/checkout@v3
+            - run: "sudo apt-get install asciidoctor"
+            
+            #vm
+            - run: "asciidoctor 'vm/index.adoc' -D _site/vm"
+            - run: "cp -r 'vm/media' _site/vm"
+            
+            - name: Upload GitHub Pages artifact
+              uses: actions/upload-pages-artifact@v1.0.8
+
+    deploy:
+        needs: upload
+        runs-on: ubuntu-22.04
+
+        permissions:
+            pages: write
+            id-token: write
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2
