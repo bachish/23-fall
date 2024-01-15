@@ -1,3 +1,7 @@
+:toc:
+:lang: ru-RU
+:source-highlighter: rouge
+
 = Виды линейных кодов.
 
 == Байтовый код
