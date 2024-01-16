@@ -20,28 +20,28 @@ jobs:
             - run: "cp -r 'vm/media' _site/vm"
 
             #01_interpret
-            - run: "asciidoctor 'vm/01_interpret/index.adoc' -D _site/vm_101"
-            - run: "cp -r 'vm/01_interpret/media' _site/vm_101"
+            - run: "asciidoctor 'vm/01_interpret/index.adoc' -D _site/vm/101"
+            - run: "cp -r 'vm/01_interpret/media' _site/vm/101"
             
             #02_instructions
-            - run: "asciidoctor 'vm/02_instructions/index.adoc' -D _site/vm_102"
-            - run: "cp -r 'vm/02_instructions/media' _site/vm_102"
+            - run: "asciidoctor 'vm/02_instructions/index.adoc' -D _site/vm/102"
+            - run: "cp -r 'vm/02_instructions/media' _site/vm/102"
 
             #03_lincode
-            - run: "asciidoctor 'vm/03_lincode/index.adoc' -D _site/vm_103"
-            - run: "cp -r 'vm/03_lincode/media' _site/vm_103"
+            - run: "asciidoctor 'vm/03_lincode/index.adoc' -D _site/vm/103"
+            - run: "cp -r 'vm/03_lincode/media' _site/vm/103"
             
             #vm/04_operands
-            - run: "asciidoctor 'vm/04_operands/index.adoc' -D _site/vm_104"
-            - run: "cp -r 'vm/04_operands/media' _site/vm_104"
+            - run: "asciidoctor 'vm/04_operands/index.adoc' -D _site/vm/104"
+            - run: "cp -r 'vm/04_operands/media' _site/vm/104"
             
             #vm/05_stack_frame
-            - run: "asciidoctor 'vm/05_stack_frame/index.adoc' -D _site/vm_105"
-            - run: "cp -r 'vm/05_stack_frame/media' _site/vm_105"
+            - run: "asciidoctor 'vm/05_stack_frame/index.adoc' -D _site/vm/105"
+            - run: "cp -r 'vm/05_stack_frame/media' _site/vm/105"
             
             #vm/06_stack
-            - run: "asciidoctor 'vm/06_stack/index.adoc' -D _site/vm_106"
-            - run: "cp -r 'vm/06_stack/media' _site/vm_106"
+            - run: "asciidoctor 'vm/06_stack/index.adoc' -D _site/vm/106"
+            - run: "cp -r 'vm/06_stack/media' _site/vm/106"
             
             #vm/07_native_interface/data
             - run: "asciidoctor 'vm/07_native_interface/data/index.adoc' -D _site/vm/107"
