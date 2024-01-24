@@ -1,0 +1,4 @@
+набор простых тем
+
+* openMP 
+* flat_combining 
