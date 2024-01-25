@@ -1,0 +1,5 @@
+= Главная
+
+До экзамена 1 дина [AaAAAAAaaa]
+
+image::fear.png[width=600]

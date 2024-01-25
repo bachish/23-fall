@@ -1,0 +1,19 @@
+* HPC
+** xref:01.adoc[]
+** xref:02.adoc[]
+** xref:03.adoc[]
+** xref:04.adoc[]
+** xref:05.adoc[]
+** xref:06.adoc[]
+** xref:07.adoc[]
+** xref:08.adoc[]
+** xref:09.adoc[]
+** xref:10.adoc[]
+** xref:11.adoc[]
+** xref:12.adoc[]
+** Прикладные библиотеки
+** xref:13_omp.adoc[]
+** xref:13_omp.adoc[]
+** Extra
+***  xref:107_call_lib_funcs.adoc[]
+***  xref:107_callbacks.adoc[]

@@ -1,0 +1,8 @@
+name: 23-fall
+title: Осень 2023
+version: ~
+start_page: index.adoc
+
+nav:
+- modules/hpc/nav.adoc
+- modules/ROOT/nav.adoc
