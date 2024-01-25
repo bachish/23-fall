@@ -1,5 +1,5 @@
 = Главная
 
-До экзамена 1 дина [AaAAAAAaaa]
+До экзамена 1 день [AaAAAAAaaa]
 
 image::fear.png[width=600]
