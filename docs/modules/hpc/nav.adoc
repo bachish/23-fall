@@ -1,6 +1,7 @@
 * HPC
 ** xref:01.adoc[]
 ** xref:02.adoc[]
+** xref:02_cancel.adoc[]
 ** xref:03.adoc[]
 ** xref:04.adoc[]
 ** xref:05.adoc[]
