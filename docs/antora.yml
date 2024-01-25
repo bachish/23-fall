@@ -4,5 +4,5 @@ version: ~
 start_page: index.adoc
 
 nav:
-- modules/hpc/nav.adoc
 - modules/ROOT/nav.adoc
+- modules/hpc/nav.adoc

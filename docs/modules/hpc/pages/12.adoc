@@ -239,7 +239,7 @@ image::12/lines-debug.png[]
 
 ==== Колонки release (-O3)
 
-image::12/cols-release%20.png[]
+image::12/cols-release.png[]
 
 ==== Строчки debug 
 image::12/lines-release.png[]
