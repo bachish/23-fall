@@ -9,7 +9,7 @@
 ** xref:07.adoc[]
 ** xref:08.adoc[]
 ** xref:09.adoc[]
-** xref:10.adoc[]
+** xref:rcu.adoc[]
 ** xref:actors.adoc[]
 ** xref:ld_preload.adoc[]
 ** Прикладные библиотеки
