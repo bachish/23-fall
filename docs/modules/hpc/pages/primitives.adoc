@@ -96,7 +96,7 @@ private:
 === timed 
 Ждем примитив только в течении какого-то времени. В некоторых книжках советуют таким способом решать дедлоки. ТАК ДЕЛАТЬ НЕ НУЖНО. 
 
-image::03/timed_mutex.png[]
+image::primitives/timed_mutex.png[]
 
 ==== Когда нужно использовать `timed_mutex` (`try_lock`)? 
  
@@ -106,15 +106,15 @@ image::03/timed_mutex.png[]
 
 === read/write (shared mutex)
 
-image::03/shared_mutex.png[]
+image::primitives/shared_mutex.png[]
 
 === spin_lock
 
-image::03/spin_lock.png[]
+image::primitives/spin_lock.png[]
 
 Так реализован `yield`. Поток не будет заблокирован на процессоре и падать в `kernel space` и произойдет context switch в ядре ОС. При этом переходит в другое состояние и не блокируется (???)
 
-image::03/spin_lock_atomic_inc_java.png[]
+image::primitives/spin_lock_atomic_inc_java.png[]
 
 ==== Когда его использовать? 
  
@@ -128,12 +128,12 @@ image::03/spin_lock_atomic_inc_java.png[]
 
 Это не примитив синхронизации, а то, что используется для их реализации. В реализации самих futex очень много `spin_lock`, чтобы поменьше выходить из `user_space`.
 
-image::03/futex.png[]
+image::primitives/futex.png[]
 
 === RAII 
 такой же ресурс: в конструкторах захватываем, в деструкторах освобождаем. В java аналог -- finally 
 
-image::03/raii.png[]
+image::primitives/raii.png[]
 
 ==== В чем разница между `mutex` и `lock` 
 В нативных ЯП их различают жестко, т.к. `lock` -- это `RAII` -- то, что освобождает его в деструкторе и захватывает в конструкторе. Такая себе обертка.
@@ -144,7 +144,7 @@ image::03/raii.png[]
 
 === Барьер  (пример с лекции)
 
-image::03/barrier.png[]
+image::primitives/barrier.png[]
 
 При ожидании чего-то освобождаем примитив синхронизации в функции `wait`. После ожидания снова ждем на общих основаниях.
 
@@ -162,7 +162,7 @@ image::03/barrier.png[]
  
  пример: каждая труба отвечает за свой бассейн, но реагирует на событие: в главной трубе появилась вода. На `POSIX` этот пример не работает :)
 
-image::03/example.png[]
+image::primitives/example.png[]
 
 ==== Из-за ? оптимизации 
 
@@ -182,7 +182,7 @@ signal == notify -- каждый раз заново проваливаемся 
 
 Cas  -- compare and set -- ассемблерная операция
 
-image::03/cas.png[]
+image::primitives/cas.png[]
 
 == 6. Условные переменные:
 === использование wait/notify
@@ -195,7 +195,7 @@ image::03/cas.png[]
 Всякие примеры с лекции
 === Пример 
 
-image::03/ex1.png[]
+image::primitives/ex1.png[]
 
 Скомпилируем файл и посмотрим все библиотеки, которые он линковал (`ldd`)
 
