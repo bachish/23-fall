@@ -7,7 +7,7 @@
 ** xref:snapshot.adoc[]
 ** xref:errors.adoc[]
 ** xref:mem_model_mesi.adoc[]
-** xref:08.adoc[]
+** xref:mem_model.adoc[]
 ** xref:async.adoc[]
 ** xref:rcu.adoc[]
 ** xref:actors.adoc[]
