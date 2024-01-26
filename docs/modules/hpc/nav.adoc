@@ -6,7 +6,7 @@
 ** xref:algo_synch.adoc[]
 ** xref:snapshot.adoc[]
 ** xref:errors.adoc[]
-** xref:07.adoc[]
+** xref:mem_model_mesi.adoc[]
 ** xref:08.adoc[]
 ** xref:async.adoc[]
 ** xref:rcu.adoc[]
