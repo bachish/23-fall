@@ -53,10 +53,6 @@ LoadLoad
 LoadStore
 ```
 
-=== Когда нужен storeLoad?
-
-image::mem_model/storeLoad.png[]
-
 == Модель памяти
 Модель памяти -- набор барьеров, которые автоматически гарантирует конкретная архитектура или иной уровень абстракции (наиболее высокий уровень абстракции).
 
@@ -77,15 +73,20 @@ image::mem_model/storeLoad.png[]
 
 Пример: AMD64 (синоним X86_64), X86 (она для 32 битной)
 
+==== Когда нужен storeLoad?
+
 Пример, который не покроет `acquire/release` семантика.
 
-```x = y = true```
+```
+x = y = true
+```
 
 Поток 1
 
 ```kotlin
 fun f(){
     x = false
+    //сюда storeLoad
     assert(y)
 }
 ```
@@ -95,6 +96,7 @@ fun f(){
 ```kotlin
 fun f(){
     y = false
+    //сюда storeLoad
     assert(x)
 }
 ```
