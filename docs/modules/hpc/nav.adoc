@@ -8,7 +8,7 @@
 ** xref:06.adoc[]
 ** xref:07.adoc[]
 ** xref:08.adoc[]
-** xref:09.adoc[]
+** xref:async.adoc[]
 ** xref:rcu.adoc[]
 ** xref:actors.adoc[]
 ** xref:ld_preload.adoc[]
