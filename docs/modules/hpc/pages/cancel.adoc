@@ -77,7 +77,7 @@ _disable_cancelled
 == glibc
 флаг: 
 
-image::02_cancel/flag.png[]
+image::cancel/flag.png[]
 
 поля структуры базовой для потоков 
 
