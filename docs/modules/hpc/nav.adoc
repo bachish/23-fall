@@ -12,5 +12,7 @@
 ** xref:10.adoc[]
 ** xref:11.adoc[]
 ** xref:12.adoc[]
+** xref:falt_combine.adoc[]
+** xref:trans_memory.adoc[]
 ** Прикладные библиотеки
 *** xref:13_omp.adoc[]
