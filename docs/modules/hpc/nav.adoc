@@ -4,7 +4,7 @@
 ** xref:cancel.adoc[]
 ** xref:primitives.adoc[]
 ** xref:errors.adoc[]
-** xref:05.adoc[]
+** xref:algo_synch.adoc[]
 ** xref:06.adoc[]
 ** xref:07.adoc[]
 ** xref:08.adoc[]
